@@ -7,6 +7,7 @@ import { authSuccess } from '../../redux/actions/auth';
 
 import '../../sass/main.scss';
 import logo from '../../assets/img/beedget.svg';
+import loader from '../../assets/img/loader.svg';
 import styles from './Login.module.css';
 import Loading from '../../components/Loading';
 
@@ -20,6 +21,7 @@ const Login = () => {
 
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [guestLoading, setGuestLoading] = useState(false);
 
   const guestUser = {
     user: {
@@ -29,6 +31,7 @@ const Login = () => {
   };
 
   const guestLogin = async () => {
+    setGuestLoading(true);
     const response = await authApi.login(guestUser);
 
     if (response.status === 200) {
@@ -115,7 +118,10 @@ const Login = () => {
                 disabled={isLoading}
                 onClick={guestLogin}
               >
-                Guest Check
+                Guest Check{' '}
+                {guestLoading && (
+                  <img src={loader} alt='loader' className={styles.loader} />
+                )}
               </button>
               <br />
               <br />

@@ -122,10 +122,22 @@ form {
 .guest {
   background-color: #dcdc16;
   color: #333;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
 }
 
 .guest:hover {
   background-color: #c8c814;
+}
+
+.loader {
+  width: 2.4rem;
+  position: absolute;
+  right: 1.6rem;
 }
 
 .login__image {
