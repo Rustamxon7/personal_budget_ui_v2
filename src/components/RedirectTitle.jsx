@@ -79,8 +79,6 @@ const RedirectTitle = ({ member_id, setOpen, setOpenUpdate }) => {
     </NavLink>
   );
 
-  console.log('member_id', member_id);
-
   const deleteMemberCategory = async () => {
     try {
       await categoriesApi.deleteMemberCategory(member_id, category_id);

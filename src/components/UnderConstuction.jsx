@@ -1,4 +1,4 @@
-import underConsturction from '../assets/under.jpg';
+import underConsturction from '../assets/under.jpeg';
 
 import styles from './UnderConsturction.module.css';
 
